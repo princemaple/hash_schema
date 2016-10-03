@@ -194,62 +194,64 @@ data = {
 puts Test::Definition.pretty_validate(data) # outputs the following
 ```
 
+```json
+{
+  "string_good": null,
+  "string_bad": "Expected String but got 123",
+  "number_good": null,
+  "number_bad": "Expected Number but got \"456\"",
+  "boolean_good": null,
+  "boolean_bad": "Expected Boolean but got \"false\"",
+  "enum_good1": null,
+  "enum_good2": null,
+  "enum_bad": "Expected \"z\" or 0 but got \"a\"",
+  "optional_good": null,
+  "optional_bad": "Expected 1 but got 2",
+  "optional_key_missing": null,
+  "mandatory_key_missing": "Expected \"value\" but got Nothing",
+  "or_good1": null,
+  "or_good2": null,
+  "or_bad": "Expected String or Number but got false",
+  "array_good": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "array_bad": [
+    "Expected Number but got nil",
+    "Expected Number but got \"a\"",
+    "Expected Number but got false"
+  ],
+  "object_array_good": [
     {
-      "string_good": null,
-      "string_bad": "Expected String but got 123",
-      "number_good": null,
-      "number_bad": "Expected Number but got \"456\"",
-      "boolean_good": null,
-      "boolean_bad": "Expected Boolean but got \"false\"",
-      "enum_good1": null,
-      "enum_good2": null,
-      "enum_bad": "Expected \"z\" or 0 but got \"a\"",
-      "optional_good": null,
-      "optional_bad": "Expected 1 but got 2",
-      "optional_key_missing": null,
-      "mandatory_key_missing": "Expected \"value\" but got Nothing",
-      "or_good1": null,
-      "or_good2": null,
-      "or_bad": "Expected String or Number but got false",
-      "array_good": [
-        null,
-        null,
-        null,
-        null
-      ],
-      "array_bad": [
-        "Expected Number but got nil",
-        "Expected Number but got \"a\"",
-        "Expected Number but got false"
-      ],
-      "object_array_good": [
-        {
-          "x": null,
-          "y": null
-        },
-        {
-          "x": null,
-          "y": null
-        }
-      ],
-      "object_array_bad": [
-        {
-          "x": null,
-          "y": "Expected Number but got Nothing"
-        },
-        {
-          "x": "Expected Number but got Nothing",
-          "y": null
-        }
-      ],
-      "object_array_missing": "Expected [Hash] but got Nothing",
-      "nested_hash": {
-        "string": "Expected \"xyz\" but got Nothing",
-        "number": "Expected 987 but got Nothing",
-        "boolean": "Expected true but got Nothing"
-      },
-      "nested_hash_missing": "Expected Hash but got Nothing"
+      "x": null,
+      "y": null
+    },
+    {
+      "x": null,
+      "y": null
     }
+  ],
+  "object_array_bad": [
+    {
+      "x": null,
+      "y": "Expected Number but got Nothing"
+    },
+    {
+      "x": "Expected Number but got Nothing",
+      "y": null
+    }
+  ],
+  "object_array_missing": "Expected [Hash] but got Nothing",
+  "nested_hash": {
+    "string": "Expected \"xyz\" but got Nothing",
+    "number": "Expected 987 but got Nothing",
+    "boolean": "Expected true but got Nothing"
+  },
+  "nested_hash_missing": "Expected Hash but got Nothing"
+}
+```
 
 ```ruby
 puts Test::Definition.interpret(data) # outputs the following
